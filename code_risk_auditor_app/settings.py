@@ -146,6 +146,8 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
+GITHUB_CLIENT_ID = env("GITHUB_CLIENT_ID", default="")
+GITHUB_CLIENT_SECRET = env("GITHUB_CLIENT_SECRET", default="")
 
 SOCIALACCOUNT_PROVIDERS = {
     'github': {
@@ -153,9 +155,12 @@ SOCIALACCOUNT_PROVIDERS = {
         # (``socialaccount`` app) containing the required client
         # credentials, or list them here:
         'APP': {
-            'client_id': env("GITHUB_CLIENT_ID", default=""),
-            'secret': env("GITHUB_CLIENT_SECRET", default=""),
+            'client_id': GITHUB_CLIENT_ID,
+            'secret': GITHUB_CLIENT_SECRET,
             'key': env("GITHUB_KEY", default="")
         }
     }
 }
+
+ACCOUNT_SIGNUP_REDIRECT_URL = "home"
+LOGIN_REDIRECT_URL = "home"

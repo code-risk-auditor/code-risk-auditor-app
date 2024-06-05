@@ -13,19 +13,19 @@ git_integration = GithubIntegration(
     app_key,
 )
 
-print("Hello")
-
-# Get all installations?!
-for installation in git_integration.get_installations():
-    print(installation.id)
-
-    for repo in installation.get_repos():
-        print("Repo: ", repo.name)
+# print("Hello")
 #
-git_connection = Github(
-        login_or_token=git_integration.get_access_token(
-            git_integration.get_installations()[0].id
-        ).token
-    )
+# # Get all installations?!
+# for installation in git_integration.get_installations():
+#     print(installation.id)
+#
+#     for repo in installation.get_repos():
+#         print("Repo: ", repo.name)
+# #
+# git_connection = Github(
+#         login_or_token=git_integration.get_access_token(
+#             git_integration.get_installations()[0].id
+#         ).token
+#     )
 
-print("Token: ", git_connection.get_repos())
+# print("Token: ", git_connection.get_repos())

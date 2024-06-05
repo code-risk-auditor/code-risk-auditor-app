@@ -21,4 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Allauth
     path('accounts/', include('allauth.urls')),
+    # Individual apps
+    path('', include('code_risk_auditor.urls')),
 ]
